@@ -7,6 +7,10 @@ The references used in this repository are:
 - https://www.kaggle.com/anantgupt/brain-mri-detection-segmentation-resunet
 - https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
 
+## Notebook
+
+https://www.kaggle.com/fadillahadamsyah/unet-for-brain-mri-segmentation
+
 ## Reusable Files
 
 On the `lib` folder, you can find the following files:
