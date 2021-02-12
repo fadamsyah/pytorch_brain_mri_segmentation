@@ -37,6 +37,7 @@ On the `lib` folder, you can find the following files:
 
 ## TODO
 
+- [X] add sequence order to augmentation
 - [] add range input for scale augmentation (scale_min, scale_max)
 - [] add range input for rotate augmentation (angle_min, angle_max)
 - [] implement horizontal shift for image augmentation
