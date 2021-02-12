@@ -17,8 +17,8 @@ def train_model(device, model, dataloaders, dataset_sizes,
         elif metric.target.lower() == 'min': best_metric = np.Inf
 
     for epoch in range(num_epochs):
+        print('-' * 50)
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
-        print('-' * 10)
 
         # Each epoch has a training and validation phase
         for phase in ['train', 'val']:
