@@ -34,3 +34,10 @@ On the `lib` folder, you can find the following files:
     - metric (optional, class)
     - num_epochs
 - `visualization.py` Plot samples result.
+
+## TODO
+
+- [] add range input for scale augmentation (scale_min, scale_max)
+- [] add range input for rotate augmentation (angle_min, angle_max)
+- [] implement horizontal shift for image augmentation
+- [] implement horizontal shift for image augmentation
