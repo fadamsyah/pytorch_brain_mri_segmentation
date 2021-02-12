@@ -104,12 +104,16 @@ class VerticalFlip(object):
         return image, mask
     
 def SegmentationTransforms(scale=None, angle=None,
-                           hflip_prob=None, vflip_prob=None):
+                           hflip_prob=None, vflip_prob=None,
+                           sequence=['scale', 'rotate',
+                                     'horizontal_flip',
+                                     'vertical_flip']):
     transform_list = []
     
-    if scale: transform_list.append(Scale(scale))
-    if angle: transform_list.append(Rotate(angle))
-    if hflip_prob: transform_list.append(HorizontalFlip(hflip_prob))
-    if vflip_prob: transform_list.append(VerticalFlip(vflip_prob))
+    for seq in sequence:
+        if scale and (seq.lower() == 'scale'): transform_list.append(Scale(scale))
+        if angle and (seq.lower() == 'rotate'): transform_list.append(Rotate(angle))
+        if hflip_prob and (seq.lower() == 'horizontal_flip'): transform_list.append(HorizontalFlip(hflip_prob))
+        if vflip_prob and (seq.lower() == 'vertical_flip'): transform_list.append(VerticalFlip(vflip_prob))
     
     return transforms.Compose(transform_list)
