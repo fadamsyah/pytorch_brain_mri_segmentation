@@ -3,7 +3,7 @@ import torch
 import time
 import copy
 
-def train_model(model, dataloaders, criterion, optimizer, scheduler=None, metric=None, num_epochs=25):
+def train_model(device, model, dataloaders, criterion, optimizer, scheduler=None, metric=None, num_epochs=25):
     since = time.time()
     
     history_loss = {'train': [], 'val': []}
