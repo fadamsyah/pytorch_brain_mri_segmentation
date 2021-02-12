@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 
-from metrics import dice_score
+from .metrics import dice_score
 
 def cfirst_to_clast(images):
     """
