@@ -15,7 +15,9 @@ def cfirst_to_clast(images):
     images = np.swapaxes(images, -2, -1)
     return images
 
-def visualize(model, images, masks, threshold=0.5, figsize=(16, 26)):
+def visualize(device, model, images,
+              masks, threshold=0.5,
+              figsize=(16, 26)):
     """
     Args:
         model: torch model
