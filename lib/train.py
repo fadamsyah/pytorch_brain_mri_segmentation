@@ -17,9 +17,6 @@ def train_model(device, model, dataloaders, dataset_sizes,
         elif metric.target.lower() == 'min': best_metric = np.Inf
 
     for epoch in range(num_epochs):
-        print('-' * 50)
-        print('Epoch {}/{}'.format(epoch, num_epochs - 1))
-
         # Each epoch has a training and validation phase
         for phase in ['train', 'val']:
             if phase == 'train':
@@ -61,12 +58,12 @@ def train_model(device, model, dataloaders, dataset_sizes,
             
             history_loss[phase].append(epoch_loss)
             if metric:
-                print('{} Loss: {:.4f} {}: {:.4f}'.format(
-                    phase, epoch_loss, metric.name, epoch_metric))
+                print('Epoch {}/{} || {} Loss: {:.4f} || {}: {:.4f}'.format(
+                    epoch, num_epochs - 1, phase, epoch_loss, metric.name, epoch_metric))
                 history_metric[phase].append(epoch_metric)
             else:
-                print('{} Loss: {:.4f}'.format(
-                    phase, epoch_loss))
+                print('Epoch {}/{} || {} Loss: {:.4f}'.format(
+                    epoch, num_epochs - 1, phase, epoch_loss))
 
             # deep copy the model
             if (metric is not None) and (phase == 'val'):
